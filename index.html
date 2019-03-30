@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Stock Market Simulator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+	.block {
+    border: 1px solid grey;
+    text-align: center;
+    vertical-align: middle;
+}
+.circle {
+    background: grey;
+    border-radius: 200px;
+    color: black;
+    height: 200px;
+    font-weight: bold;
+    width: 200px;
+    display: table;
+    margin: 20px auto;
+}
+.circle p {
+    vertical-align: middle;
+    display: table-cell;
+}
+ .bg-2 {
+    background-color: #2f2f2f;
+    color: #ffffff;
+	padding-top: 30px;
+    padding-bottom: 30px;
+	}	
+	.modal-header, .close {
+      background-color: #5cb85c;
+      color:white !important;
+      text-align: center;
+      font-size: 30px;
+  }
+  .modal-footer {
+      background-color: white;
+  }
+  .modal-body {
+       background-color : white;
+  }
+  body, html {
+    height: 100%;
+}
+body, html {
+  height: 100%;
+  margin: 0;
+  font: 400 15px/1.8 "Lato", sans-serif;
+  color: #777;
+}
+
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  position: relative;
+  opacity: 0.65;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.bgimg-1 {
+  background-image: url("bullbear.jpg");
+  min-height: 100%;
+}
+
+.bgimg-2 {
+  background-image: url("signup_background.jpg");
+  min-height: 400px;
+}
+
+.bgimg-3 {
+  background-image: url("dalal.jpg");
+  min-height: 400px;
+}
+
+.caption {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+
+.caption span.border {
+  background-color: #111;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 10px;
+}
+
+h3 {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font: 20px "Lato", sans-serif;
+  color: #111;
+}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+    .bgimg-1, .bgimg-2, .bgimg-3 {
+        background-attachment: scroll;
+    }
+}
+
+</style>
+</head>  
+
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<!--<a href="#"><img src="logo.jpg" width="100" height="60"></a> -->
+			<a class="navbar-brand" href="#">Stock Market</a>
+		</div>
+		<ul class="nav navbar-nav">
+			<li class="active"><a href="#">Home</a></li>
+			<!--<li><a href="#"></a></li>
+			<li><a href="#">Page 2</a></li>
+			<li><a href="#">Page 3</a></li>-->
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+			<li><a href="signup.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+			<li><a href="#myModal" data-toggle="modal" id="myBtn"<span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+		</ul>
+	</div>
+	</nav>
+
+<!--	<div class="jumbotron bg">
+		<center>
+			<h1><br>Stock Market Simulator</h1>
+			<h3><p>Learn. Invest. Predict.</h3>
+		</center>
+	</div>
+-->
+<!-- Modal For Login -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header" style="padding:35px 50px;">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"><span class="glyphicon glyphicon-lock"></span>Login</h4>
+      </div>
+      <div class="modal-body" style="padding:40px 50px;">
+       <form role="form" method="post" action="/BeProject/login.php">
+            <div class="form-group">
+              <label for="u"><span class="glyphicon glyphicon-user"></span> Username</label>
+              <input type="text" class="form-control" id="u" name="u" placeholder="Enter username" required>
+            </div>
+            <div class="form-group">
+              <label for="p"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+              <input type="password" class="form-control" id="p" name="p" placeholder="Enter password" required>
+            </div>
+			<input type="submit" value="Login" name="login_btn" class="btn btn-success btn-block"> 
+		</form>		
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+		<p><a href="#">Forgot Password?</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="bgimg-1">
+  <div class="caption">
+    <span class="border">STOCK MARKET SIMULATOR</span>
+  </div>
+</div>
+
+<div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;">
+  <h3 style="text-align:center;">LEARN.INVEST.PREDICT.</h3>
+  <p>Stocks and bonds are the meat and potatoes of investing. In general, buying a stock is more risky than buying a bond. Some stocks are less risky than others, though.
+		The way you mix investments determines the overall level of risk in the portfolio.With the right mix, you can control portfolio volatility to a certain extent. 
+		You also have some control over the level of returns. Higher-risk investments generally offer higher returns;lower risk equals lower returns.
+		Buying and selling investments is just an ordinary part of being an investor. Whether you regularly rebalance or employ a tactical shift in your asset allocation, 
+		having a system in place to tell you when to buy and sell will keep you from panicking and bailing out at the wrong moment.
+		Thanks to virtual stock exchange technology, stock market simulators (aka stock market games) that let you pick securities, 
+		make trades and track the results — all without risking a penny—are as close as your keyboard or cell phone.</p>
+</div>
+
+<div class="bgimg-2">
+  <div class="caption" id="col">
+    <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">THINK YOU HAVE WHAT IT TAKES?</span>
+  </div>
+</div>
+
+<div style="position:relative;">
+  <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
+    <p>
+		<ul>
+			<li>Virtual Balance<br><br>
+			<li>Test Your Skills With Trading Challenges<br><br>
+			<li>Connect worldwide<br><br>
+			<li>A Stepping Stone to the Real Markets
+		</ul>
+	</p>
+  </div>
+</div>
+
+<div class="bgimg-3">
+  <div class="caption" id="col1">
+    <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">OUR SIMULATOR:<br>LEARN TO TRADE</span>
+  </div>
+</div>
+
+<div style="position:relative;">
+  <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
+    <p>Online stock market games are simple, easy-to-use programs that imitate the real-life workings of the equities markets. Most stock market games give users $100,000 in 
+		pretend money to start. From there, players pick to purchase; most of the stocks are those that are available on the New York Stock Exchange (NYSE), Nasdaq and the 
+		American Stock Exchange (AMEX).<br>
+		Most online stock simulators try to match real-life circumstances and actual performance as much as possible. Many even charge broker fees and commissions. These charges
+		can significantly affect an investor's bottom line, and including these in simulated trading helps users learn to factor these costs in when making purchasing decisions.
+		Along the way, they’ll also learn the basics of finance and learn the basic terminology of investing, such as momentum trading, shorts and P/E ratios.</p>
+  </div>
+</div>
+
+<div class="bgimg-1">
+  <div class="caption">
+    <span class="border">JOIN OTHER INVESTORS AND SEE WHERE YOU STACK UP!!!</span>
+  </div>
+</div>
+<!--	<footer class="container-fluid bg-2 text-center"">
+		<span class="glyphicon glyphicon-copyright-mark"></span>&nbsp stock market simulator<br>2017
+	</footer>-->
+</body>
+</html>

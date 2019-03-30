@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Stock Market Simulator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+	.block {
+    border: 1px solid grey;
+    text-align: center;
+    vertical-align: middle;
+}
+.circle {
+    background: grey;
+    border-radius: 200px;
+    color: black;
+    height: 200px;
+    font-weight: bold;
+    width: 200px;
+    display: table;
+    margin: 20px auto;
+}
+.circle p {
+    vertical-align: middle;
+    display: table-cell;
+}
+ .bg-2 {
+    background-color: #2f2f2f;
+    color: #ffffff;
+	padding-top: 30px;
+    padding-bottom: 30px;
+	}	
+	.modal-header, .close {
+      background-color: #5cb85c;
+      color:white !important;
+      text-align: center;
+      font-size: 30px;
+  }
+  .modal-footer {
+      background-color: white;
+  }
+  .modal-body {
+       background-color : white;
+  }
+</style>
+</head>  
+
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<!--<a href="#"><img src="logo.jpg" width="100" height="60"></a> -->
+			<a class="navbar-brand" href="#">Stock Market</a>
+		</div>
+		<ul class="nav navbar-nav">
+			<li class="active"><a href="#">Home</a></li>
+			<!--<li><a href="#"></a></li>
+			<li><a href="#">Page 2</a></li>
+			<li><a href="#">Page 3</a></li>-->
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+			<li><a href="signup.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+			<li><a href="#myModal" data-toggle="modal" id="myBtn"<span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+		</ul>
+	</div>
+	</nav>
+
+	<div class="jumbotron bg">
+		<center>
+			<h1><br>Stock Market Simulator</h1>
+			<h3><p>Learn. Invest. Predict.</h3>
+		</center>
+	</div>
+
+<!-- Modal For Login -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header" style="padding:35px 50px;">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"><span class="glyphicon glyphicon-lock"></span>Login</h4>
+      </div>
+      <div class="modal-body" style="padding:40px 50px;">
+       <form role="form" method="post" action="/BeProject/login.php">
+            <div class="form-group">
+              <label for="u"><span class="glyphicon glyphicon-user"></span> Username</label>
+              <input type="text" class="form-control" id="u" name="u" placeholder="Enter username" required>
+            </div>
+            <div class="form-group">
+              <label for="p"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+              <input type="password" class="form-control" id="p" name="p" placeholder="Enter password" required>
+            </div>
+			<input type="submit" value="Login" name="login_btn" class="btn btn-success btn-block"> 
+		</form>		
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+		<p><a href="#">Forgot Password?</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!--Info-->
+	<section class="get-inspired people_grow bg-1">
+    <div class="container">
+	<center>	<br><br><br><br>
+            <ul class="col-md-12">
+                <li class="col-md-6 list-group-item">
+                    <div class="descrip_inspired_outer">
+                        <div class="descrip_inspired">
+                            <img src="coins.jpg" width="100" height="100"> 
+                            <h3 class="heading-label">Virtual Balance</h3>
+                            <p class="meta-text">Start with $100,000 in virtual cash and put your trading skills to the test! 
+							<br>Compete with thousands of Investopedia traders and trade your way to the top!</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="col-md-6 list-group-item">
+                    <div class="descrip_inspired_outer">
+                        <div class="descrip_inspired">
+							<img src="computer.png" width="100" height="100">
+                            <h3 class="heading-label">Test Your Skills With Trading Challenges</h3>
+                            <p class="meta-text">Join or create challenges with your friends and other investors. 
+								<br>Compete to see who has the best investment results daily.</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+    </div>
+	<div class="container">
+		<center>		
+			<ul class="col-md-12">
+                <li class="col-md-6 list-group-item">
+                    <div class="descrip_inspired_outer">
+                        <div class="descrip_inspired">
+                            <img src="globe.png" width="100" height="100"> 
+                            <h3 class="heading-label">Connect with over 700,000 worldwide</h3>
+                            <p class="meta-text">Interact with other traders from diverse backgrounds and experiences, 
+							<br>and learn the methods behind their trades to become a better investor.</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="col-md-6 list-group-item">
+                    <div class="descrip_inspired_outer">
+                        <div class="descrip_inspired">
+							<img src="graph.jpg" width="100" height="100">
+                            <h3 class="heading-label">A Stepping Stone to the Real Markets</h3>
+                            <p class="meta-text">The ideal platform to get your financial feet wet! Submit trades in a 
+								<br>virtual environment before you start risking your own capital.</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+		</center>
+    </div>
+	<div class="container text-justify">
+		<br><br>
+		<p>Stocks and bonds are the meat and potatoes of investing. In general, buying a stock is more risky than buying a bond. Some stocks are less risky than others, though.
+		The way you mix investments determines the overall level of risk in the portfolio.With the right mix, you can control portfolio volatility to a certain extent. 
+		You also have some control over the level of returns. Higher-risk investments generally offer higher returns;lower risk equals lower returns.
+		Buying and selling investments is just an ordinary part of being an investor. Whether you regularly rebalance or employ a tactical shift in your asset allocation, 
+		having a system in place to tell you when to buy and sell will keep you from panicking and bailing out at the wrong moment.
+		Thanks to virtual stock exchange technology, stock market simulators (aka stock market games) that let you pick securities, 
+		make trades and track the results — all without risking a penny—are as close as your keyboard or cell phone.</p>
+		<div class="col-md-4">
+			<u><h4>What is Stock Market Game?</h4></u><br>
+			Online stock market games are simple, easy-to-use programs that imitate the real-life workings of the equities markets. Most stock market games give users $100,000 in 
+			pretend money to start. From there, players pick to purchase; most of the stocks are those that are available on the New York Stock Exchange (NYSE), Nasdaq and the 
+			American Stock Exchange (AMEX).<br>
+			Most online stock simulators try to match real-life circumstances and actual performance as much as possible. Many even charge broker fees and commissions. These charges
+			can significantly affect an investor's bottom line, and including these in simulated trading helps users learn to factor these costs in when making purchasing decisions.
+			Along the way, they’ll also learn the basics of finance and learn the basic terminology of investing, such as momentum trading, shorts and P/E ratios.
+		</div>
+		<div class="col-md-4">
+			<u><h4>Some Proviso</h4></u><br>
+			These useful skills can be applied to an actual trading account. Of course, in the real world, there are numerous factors that affect trading and investment decisions, 
+			such as one's risk tolerance,investment horizon,investment objectives, taxation issues, need for diversification, and so on. It is impossible to take investor psychology 
+			into account because actual hard cash is not at risk.
+		</div>
+		<div class="col-md-4">
+			<u><h4>Our simulator:<br>Learn to trade</h4></u><br>
+			The Investopedia Stock Simulator is well integrated with the site’s familiar educational content. Using real data from the markets, the trading occurs 
+			in context of a game, which can involve joining an existing game or the creation of a custom game that allows the user to configure the rules.
+			Options, margin trading, adjustable commission rates and other choices provide a variety of ways to customize the games
+		</div>
+	</div>
+    </section>
+	<div class="container-fluid">
+		<center>
+		<h1>Think you have what it takes?</h1>
+		<h3>Join other investors and see where you stack up</h3><br>
+		</center>
+	</div>
+	<footer class="container-fluid bg-2 text-center"">
+		<span class="glyphicon glyphicon-copyright-mark"></span>&nbsp stock market simulator<br>2017
+	</footer>
+</body>
+</html>

@@ -1,0 +1,104 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Sign Up</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+	body{
+	margin:0 auto;
+	background-image:url("");
+	background-repeat:no-repeat;
+	background-size: 720px;
+	background-position: center;
+}
+.container{
+	width:500px;
+	height:1150px;
+	text-align:center;
+	background-color:rgba(0, 0, 0,0.6);
+	border-radius: 4px;
+	margin: 0 auto;
+	margin-top: 100px;
+}
+<!--.container img{
+	width:350px;
+	height:120px;
+	margin-top:5px;
+	margin-bottom:10px;
+	text-align:center;
+}-->
+input {
+	height:35px;
+	width:300px;
+	font-size:18px;
+	margin-bottom:15px;
+	margin-top:15px;
+	background-color:#fff;
+	padding-left:30px;
+}
+select {
+	height:35px;
+	width:200px;
+	font-size:18px;
+	margin-bottom:20px;
+	background-color:#fff;
+	padding-left:15px;
+}
+
+.radio-pink [type="radio"]:checked+label:after {
+    border-color: #e91e63;
+    background-color: #e91e63;
+}
+/*Gap*/
+
+.radio-pink-gap [type="radio"].with-gap:checked+label:before {
+    border-color: #e91e63;
+}
+
+.radio-pink-gap [type="radio"]:checked+label:after {
+    border-color: #e91e63;
+    background-color: #e91e63;
+}                
+                    
+  </style>
+ </head>
+ <body>
+	<div class="container">
+		<center>
+		<br><br><br>
+		<h1>Register Now</h1><br><br>
+		<form class="form-horizontal" method="post" action="/BeProject/signup.php">
+			<div class="form-group">
+				<label class="control-label col-md-3"></label>
+				<div class="col-md-6">
+					<input type="text" placeholder="Username" class="form-control" id="uname" name="uname">
+				</div>
+			</div><br>
+			<div class="form-group">
+				<label class="control-label col-md-3"></label>
+				<div class="col-md-6">
+					<input type="password" placeholder="Password" class="form-control" id="pwd" name="pwd">
+				</div>
+			</div><br>
+			<div class="form-group">
+				<label class="control-label col-md-3"></label>
+				<div class="col-md-6">
+					<input type="password" placeholder="Confirm password"class="form-control" id="cpwd" name="cpwd">
+				</div>
+			</div><br>
+			<div class="form-group">
+				<label class="control-label col-md-3"></label>
+				<div class="col-md-6">
+					<input type="email" placeholder="Email-id" class="form-control" id="email" name="email">
+				</div>
+			</div><br>                   
+			<input type="submit" class="btn btn-success">
+		</form>
+	</div>
+ </body>
+</html>

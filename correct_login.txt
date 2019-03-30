@@ -1,0 +1,59 @@
+<?php
+session_start();
+$errors=array();
+// connection with database server
+$con= mysql_connect('localhost','root','');
+if(!$con){
+die('could not connect'.mysql_error());
+}
+//connection with database
+$selected = mysql_select_db("stock market",$con);
+//require 'users.php';
+//require 'general.php';
+ 
+ //user data
+ /*if(logged_in()==true)
+ {
+	$SESSION_ID= $_SESSION['ID'];  
+	$user_data= user_data($SESSION_ID,'ID','username','password');
+ }*/
+if(empty($_POST)==false)
+ {
+$uname = $_POST['u']; 
+$pword = $_POST['p'];
+/*if(user_exists($uname)==false)
+{
+$errors[]='We can\'t find that username. Have you registered?';	
+}
+else
+{
+	$login= login($uname,$pword);
+	if($login==false){
+	$errors[]='That username/password combination is incorrect'	;
+	}
+}
+if(user_exists($uname)==true && $login==true)
+{
+	 $_SESSION['ID']=$login;
+	 header("location: index2.html");
+	 exit();
+}*/
+$result=mysql_query("SELECT * FROM login WHERE username='$uname' AND password='$pword'");
+$row=mysql_fetch_array($result);
+if($row>0){
+session_start();
+//$_SESSION['pharmacist_id']=$row[0];
+//$_SESSION['first_name']=$row[1];
+//$_SESSION['last_name']=$row[2];
+$_SESSION['staff_id']=$row[3];
+$_SESSION['username']=$row[0];
+header("location:http://".$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF'])."/index2.php");
+}else{
+	 echo "<script type='text/javascript'>alert('Invalid login....Try Again!!!');</script>";
+//	header("location:http://".$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF'])."/index.html");	 
+	//message="<font color=red>Invalid login Try Again</font>";
+
+}
+// else echo("errors");
+ }
+?>
